@@ -26,9 +26,15 @@
 <div id="content">
 
 </div>
+
 <script>
     function rand(min,max) {
         return Math.round(Math.random()*(max-min)+min);
+    }
+
+    function dealEvent(event) {
+        var result=rand(min,max);
+        document.querySelector('#content').innerHTML=result;
     }
 
     var arr=window.location.search.slice(1).split('-');
@@ -42,6 +48,9 @@
         var result=rand(min,max);
         document.querySelector('#content').innerHTML=result;
         //alert('random number is:'+result);
+
+        document.addEventListener('touchend',dealEvent);
+        document.body.onkeyup=dealEvent;
     }
 </script>
 </body>
