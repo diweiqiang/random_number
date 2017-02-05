@@ -49,8 +49,10 @@
         document.querySelector('#content').innerHTML=result;
         //alert('random number is:'+result);
 
-        //document.body.addEventListener('touchend',dealEvent);
-        document.body.ontouchend=dealEvent;
+        document.body.addEventListener('touchend',dealEvent);
+        //document.body.ontouchend=dealEvent;
+        //var e = new Event('touchend');
+        //document.body.dispatchEvent(e);
         document.body.onkeyup=dealEvent;
     }
 </script>
